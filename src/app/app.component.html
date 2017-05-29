@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<label>Country:</label> 
+<select [(ngModel)]="SelectedAccessTypeID.id" (change)="onSelect($event.target.value)">
+  <option value="0">--Select--</option>
+  <option *ngFor="#accessTypeId of accessTypeId" value= {{accessTypeId.id}}>{{accessTypeId.name}}</option>
+</select> 
+<br/><br/>
+
+
+<div>
+<label>State:</label>
+<select>
+  <option *ngIf='SelectedAccessTypeID.id == 0' value="0">--Select--</option>
+  <option *ngFor="#portSpeed of states " value= {{portSpeed.id}}>{{portSpeed.name}}</option>
+</select>
+</div>
